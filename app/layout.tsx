@@ -2,14 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://thefitnessjunction.online'),
   title: 'THE FITNESS JUNCTION | Premium Gym & Fitness Centre in Barasat',
   description: 'Join THE FITNESS JUNCTION in Barasat for Gym, CrossFit, Yoga, and Personal Training. Top-rated fitness centre (4.8⭐) located at Arabindrapally, Helabattala.',
   openGraph: {
     title: 'THE FITNESS JUNCTION - Gym & CrossFit in Barasat',
     description: 'Train Hard. Move Better. Become Stronger. Premium unisex fitness centre offering expert personal training and top-tier equipment in Barasat, West Bengal.',
     type: 'website',
-    url: 'https://thefitnessjunction.online',
     siteName: 'THE FITNESS JUNCTION',
     images: ['/images/hero-bg.jpg'],
   },
