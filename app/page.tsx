@@ -299,8 +299,8 @@ export default function FitwellHome() {
     },
   ];
 
-  const openModal = (contextTitle: string, defaultInterest?: string) => {
-    setModalContext(contextTitle);
+  const openModal = (contextTitle?: string, defaultInterest?: string) => {
+    setModalContext(contextTitle || 'General Enquiry');
     if (defaultInterest) {
       setFormData((prev) => ({ ...prev, interest: defaultInterest }));
     }
