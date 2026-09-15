@@ -1,0 +1,6 @@
+{
+  "name": "Fitwell - Fitness & Gym Template",
+  "description": "Pixel-perfect clone of Fitwell Fitness & Gym featuring interactive hero slider, scrolling ticker, services, pricing plans, trainer showcases, FAQs, testimonials, blog, lead capture modals, and interactive chat widget.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

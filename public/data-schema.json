@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FitwellWebsiteSchema",
+  "description": "Content data schema for Fitwell Fitness Club CMS & Admin Panel",
+  "contentTypes": {
+    "leads": {
+      "name": "Leads & Prospects",
+      "fields": [
+        { "name": "id", "type": "number", "required": true },
+        { "name": "name", "type": "text", "required": true },
+        { "name": "phone", "type": "text", "required": true },
+        { "name": "email", "type": "text", "required": false },
+        { "name": "interest", "type": "select", "options": ["Personal Training", "Monthly Pro", "Free 3-Day Trial Pass", "Nutrition & Diet"], "required": true },
+        { "name": "date", "type": "date", "required": false },
+        { "name": "notes", "type": "textarea", "required": false },
+        { "name": "status", "type": "select", "options": ["new", "contacted", "converted", "archived"], "required": true },
+        { "name": "source", "type": "text", "required": false },
+        { "name": "createdAt", "type": "text", "required": true }
+      ]
+    },
+    "members": {
+      "name": "Club Members",
+      "fields": [
+        { "name": "id", "type": "text", "required": true },
+        { "name": "name", "type": "text", "required": true },
+        { "name": "email", "type": "text", "required": true },
+        { "name": "phone", "type": "text", "required": true },
+        { "name": "plan", "type": "select", "options": ["Weekly Basic", "Monthly Pro", "Annual Elite"], "required": true },
+        { "name": "status", "type": "select", "options": ["active", "expiring", "expired"], "required": true },
+        { "name": "joinedDate", "type": "date", "required": true },
+        { "name": "expiryDate", "type": "date", "required": true },
+        { "name": "attendanceCount", "type": "number", "required": true }
+      ]
+    },
+    "classes": {
+      "name": "Fitness Classes",
+      "fields": [
+        { "name": "id", "type": "text", "required": true },
+        { "name": "title", "type": "text", "required": true },
+        { "name": "trainer", "type": "text", "required": true },
+        { "name": "day", "type": "select", "options": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "required": true },
+        { "name": "time", "type": "text", "required": true },
+        { "name": "duration", "type": "text", "required": true },
+        { "name": "capacity", "type": "number", "required": true },
+        { "name": "enrolled", "type": "number", "required": true },
+        { "name": "level", "type": "select", "options": ["Beginner", "Intermediate", "All Levels", "Advanced"], "required": true },
+        { "name": "category", "type": "select", "options": ["HIIT", "Strength", "Cardio", "Yoga & Recovery", "Boxing"], "required": true }
+      ]
+    },
+    "settings": {
+      "name": "Club Settings",
+      "fields": [
+        { "name": "clubName", "type": "text", "required": true },
+        { "name": "tagline", "type": "text", "required": true },
+        { "name": "phone", "type": "text", "required": true },
+        { "name": "email", "type": "text", "required": true },
+        { "name": "address", "type": "text", "required": true },
+        { "name": "hoursWeekday", "type": "text", "required": true },
+        { "name": "hoursWeekend", "type": "text", "required": true },
+        { "name": "announcement", "type": "textarea", "required": false }
+      ]
+    }
+  }
+}

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitwell - Admin & Management Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #D7FB00;
+      --brand-hover: #c4e600;
+      --bg-main: #131824;
+      --bg-card: #171E2E;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Rajdhani', sans-serif;
+      --font-body: 'Rubik', sans-serif;
+    }
+    body {
+      background-color: var(--bg-main);
+      color: #fff;
+      font-family: var(--font-body);
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1, h2, h3, h4, h5, .font-heading {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-brand {
+      background-color: var(--brand);
+      color: #131824;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      transition: all 0.2s ease;
+    }
+    .btn-brand:hover {
+      background-color: var(--brand-hover);
+      color: #131824;
+      transform: translateY(-1px);
+    }
+    .card-dark {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .nav-pill-btn {
+      color: #9ca3af;
+      background: transparent;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .nav-pill-btn:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+    .nav-pill-btn.active {
+      background-color: var(--brand);
+      color: #131824;
+      font-weight: 700;
+    }
+    .badge-status {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+    .table-dark-custom {
+      --bs-table-bg: transparent;
+      color: #d1d5db;
+    }
+    .table-dark-custom th {
+      color: #9ca3af;
+      font-family: var(--font-heading);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    .table-dark-custom td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      vertical-align: middle;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="d-flex min-vh-100">
+    <!-- Sidebar -->
+    <aside class="card-dark border-0 border-end border-secondary border-opacity-25 d-flex flex-column justify-content-between p-3" style="width: 280px; z-index: 10;">
+      <div>
+        <div class="d-flex align-items-center justify-content-between px-2 py-3 border-bottom border-white border-opacity-10 mb-3">
+          <a href="/" class="text-decoration-none d-flex align-items-center gap-2">
+            <img src="/images/logo.png" alt="SPARK GYM" style="height: 32px; object-fit: contain;">
+            <span class="text-white fw-bold text-uppercase" style="letter-spacing: 1px; font-size: 16px;">SPARK <span style="color: #D7FB00;">GYM</span></span>
+          </a>
+          <span class="badge bg-warning bg-opacity-25 text-warning px-2 py-1" style="color: var(--brand) !important; background-color: rgba(215, 251, 0, 0.15) !important;">ADMIN</span>
+        </div>
+
+        <a href="/" target="_blank" class="d-flex align-items-center justify-content-between p-2 mb-3 text-decoration-none rounded bg-white bg-opacity-5 text-white-50 small">
+          <span><i class="bi bi-box-arrow-up-right me-1 text-warning" style="color: var(--brand) !important;"></i> View Live Site</span>
+          <span class="text-muted">fitwell.club</span>
+        </a>
+
+        <div class="d-flex flex-column gap-1">
+          <button class="nav-pill-btn active" onclick="switchTab('overview')">
+            <i class="bi bi-grid-1x2"></i> <span>Dashboard</span>
+          </button>
+          <button class="nav-pill-btn" onclick="switchTab('leads')">
+            <i class="bi bi-people"></i> <span>Leads & Inquiries</span>
+          </button>
+          <button class="nav-pill-btn" onclick="switchTab('members')">
+            <i class="bi bi-person-badge"></i> <span>Club Members</span>
+          </button>
+          <button class="nav-pill-btn" onclick="switchTab('classes')">
+            <i class="bi bi-calendar-event"></i> <span>Class Timetable</span>
+          </button>
+          <button class="nav-pill-btn" onclick="switchTab('settings')">
+            <i class="bi bi-gear"></i> <span>Club Settings</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="pt-3 border-top border-white border-opacity-10">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <div class="d-flex align-items-center gap-2">
+            <div class="rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 34px; height: 34px; background: var(--brand); color: #131824;">IG</div>
+            <div>
+              <div class="small fw-bold text-white">Indrajit Ghosh</div>
+              <div class="text-muted" style="font-size: 11px;">Super Admin</div>
+            </div>
+          </div>
+          <a href="/login" class="text-muted text-decoration-none"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+        <div class="small text-muted" style="font-size: 11px;">
+          Fitwell Platform • <a href="https://indrajit-mern.vercel.app/" target="_blank" class="text-decoration-none" style="color: var(--brand);">Developed by Indrajit↗</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow-1 p-4 overflow-auto">
+      <!-- Top Bar -->
+      <div class="d-flex justify-content-between align-items-center pb-3 mb-4 border-bottom border-white border-opacity-10">
+        <div>
+          <h2 class="h4 mb-0 text-white" id="tab-title">Executive Dashboard</h2>
+          <span class="text-muted small">Fitwell Club Management Console</span>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-sm btn-outline-light" onclick="exportData()"><i class="bi bi-download me-1"></i> Export Backup</button>
+          <button class="btn btn-sm btn-brand" onclick="showAddModal()"><i class="bi bi-plus-lg me-1"></i> Add Entry</button>
+        </div>
+      </div>
+
+      <!-- Dashboard View -->
+      <div id="view-overview">
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="card card-dark p-3">
+              <div class="text-muted small text-uppercase">Total Leads</div>
+              <div class="h2 mb-0 font-heading text-white" id="count-leads">0</div>
+              <span class="text-success small"><i class="bi bi-arrow-up-right"></i> Active Pipeline</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-dark p-3">
+              <div class="text-muted small text-uppercase">Active Members</div>
+              <div class="h2 mb-0 font-heading text-white" id="count-members">0</div>
+              <span class="text-info small"><i class="bi bi-check-circle"></i> 98% Retention</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-dark p-3">
+              <div class="text-muted small text-uppercase">Monthly Run-Rate</div>
+              <div class="h2 mb-0 font-heading" style="color: var(--brand);">$14,850</div>
+              <span class="text-muted small">Projected MRR</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card card-dark p-3">
+              <div class="text-muted small text-uppercase">Daily Classes</div>
+              <div class="h2 mb-0 font-heading text-white" id="count-classes">5</div>
+              <span class="text-warning small">85% Utilization</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-dark p-4">
+          <h3 class="h5 text-white mb-3">Recent Prospect Inquiries</h3>
+          <div class="table-responsive">
+            <table class="table table-dark-custom">
+              <thead>
+                <tr>
+                  <th>NAME</th>
+                  <th>PHONE</th>
+                  <th>INTEREST</th>
+                  <th>STATUS</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody id="overview-leads-body">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leads View -->
+      <div id="view-leads" style="display: none;">
+        <div class="card card-dark p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h5 text-white mb-0">Website Inquiries & Prospect CRM</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-dark-custom">
+              <thead>
+                <tr>
+                  <th>NAME</th>
+                  <th>PHONE</th>
+                  <th>EMAIL</th>
+                  <th>INTEREST</th>
+                  <th>STATUS</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody id="leads-body">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Members View -->
+      <div id="view-members" style="display: none;">
+        <div class="card card-dark p-4">
+          <h3 class="h5 text-white mb-3">Registered Athletes</h3>
+          <div class="table-responsive">
+            <table class="table table-dark-custom">
+              <thead>
+                <tr>
+                  <th>MEMBER ID</th>
+                  <th>NAME</th>
+                  <th>PLAN</th>
+                  <th>STATUS</th>
+                  <th>EXPIRY</th>
+                  <th>VISITS</th>
+                </tr>
+              </thead>
+              <tbody id="members-body">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classes View -->
+      <div id="view-classes" style="display: none;">
+        <div class="card card-dark p-4">
+          <h3 class="h5 text-white mb-3">Class Timetable</h3>
+          <div class="table-responsive">
+            <table class="table table-dark-custom">
+              <thead>
+                <tr>
+                  <th>CLASS TITLE</th>
+                  <th>COACH</th>
+                  <th>DAY</th>
+                  <th>TIME</th>
+                  <th>CAPACITY</th>
+                </tr>
+              </thead>
+              <tbody id="classes-body">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings View -->
+      <div id="view-settings" style="display: none;">
+        <div class="card card-dark p-4" style="max-width: 600px;">
+          <h3 class="h5 text-white mb-3">Club Info & Contacts</h3>
+          <div class="mb-3">
+            <label class="form-label text-muted small text-uppercase">Club Name</label>
+            <input type="text" id="setting-clubName" class="form-control bg-dark text-white border-secondary" value="SPARK GYM">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small text-uppercase">Telephone</label>
+            <input type="text" id="setting-phone" class="form-control bg-dark text-white border-secondary" value="+91 82408 55067">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small text-uppercase">Email</label>
+            <input type="email" id="setting-email" class="form-control bg-dark text-white border-secondary" value="sparkgym.chakdaha@gmail.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small text-uppercase">Address</label>
+            <input type="text" id="setting-address" class="form-control bg-dark text-white border-secondary" value="Monorama Ultrascan Pvt. Ltd., C.B. Road, beside Monorama Ultrascan, Lalpur, Chakdaha, West Bengal 741222">
+          </div>
+          <button class="btn btn-brand" onclick="saveSettings()">Save Configuration</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function getStore(key, fallback) {
+      try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function setStore(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    const defaultLeads = [
+      { id: 1, name: 'Vikram Sengupta', phone: '+91 98301 22415', email: 'vikram.s@gmail.com', interest: 'Personal Training', status: 'new' },
+      { id: 2, name: 'Ananya Roy', phone: '+91 98745 61230', email: 'ananya.roy@yahoo.com', interest: 'Free 3-Day Trial Pass', status: 'contacted' },
+      { id: 3, name: 'Rohit Bannerjee', phone: '+91 91234 56789', email: 'rohit.b@outlook.com', interest: 'Monthly Pro Membership', status: 'converted' }
+    ];
+
+    const defaultMembers = [
+      { id: 'MEM-101', name: 'Debjit Paul', plan: 'Monthly Pro', status: 'active', expiry: '2026-10-15', attendance: 48 },
+      { id: 'MEM-102', name: 'Sagnik Bhattacharya', plan: 'Annual Elite', status: 'active', expiry: '2026-11-01', attendance: 112 },
+      { id: 'MEM-103', name: 'Ritu Karmakar', plan: 'Weekly Basic', status: 'expiring', expiry: '2026-09-14', attendance: 6 }
+    ];
+
+    const defaultClasses = [
+      { title: 'High-Octane HIIT Circuit', trainer: 'David Lee', day: 'Monday', time: '06:30 AM', capacity: '18/20' },
+      { title: 'Olympic Powerlifting', trainer: 'Marcus Brody', day: 'Tuesday', time: '07:30 AM', capacity: '11/12' },
+      { title: 'Vinyasa Flow & Recovery', trainer: 'Elena Rostova', day: 'Wednesday', time: '06:00 PM', capacity: '22/25' }
+    ];
+
+    function renderAll() {
+      const leads = getStore('fitwell_leads', defaultLeads);
+      const members = getStore('fitwell_members', defaultMembers);
+      const classes = getStore('fitwell_classes', defaultClasses);
+
+      document.getElementById('count-leads').innerText = leads.length;
+      document.getElementById('count-members').innerText = members.length;
+      document.getElementById('count-classes').innerText = classes.length;
+
+      // Render overview leads
+      document.getElementById('overview-leads-body').innerHTML = leads.slice(0, 4).map(l => `
+        <tr>
+          <td class="fw-bold text-white">${l.name}</td>
+          <td>${l.phone}</td>
+          <td style="color: var(--brand);">${l.interest}</td>
+          <td><span class="badge bg-${l.status === 'new' ? 'warning' : (l.status === 'contacted' ? 'info' : 'success')} bg-opacity-25 text-white">${l.status}</span></td>
+          <td><button class="btn btn-sm btn-outline-warning py-0 px-2" onclick="updateLeadStatus(${l.id}, 'converted')">Convert</button></td>
+        </tr>
+      `).join('');
+
+      // Render full leads
+      document.getElementById('leads-body').innerHTML = leads.map(l => `
+        <tr>
+          <td class="fw-bold text-white">${l.name}</td>
+          <td>${l.phone}</td>
+          <td>${l.email || 'N/A'}</td>
+          <td style="color: var(--brand);">${l.interest}</td>
+          <td><span class="badge bg-${l.status === 'new' ? 'warning' : (l.status === 'contacted' ? 'info' : 'success')} bg-opacity-25 text-white">${l.status}</span></td>
+          <td>
+            <button class="btn btn-sm btn-outline-info py-0 px-2" onclick="updateLeadStatus(${l.id}, 'contacted')">Contacted</button>
+            <button class="btn btn-sm btn-outline-warning py-0 px-2" onclick="updateLeadStatus(${l.id}, 'converted')">Convert</button>
+          </td>
+        </tr>
+      `).join('');
+
+      // Render members
+      document.getElementById('members-body').innerHTML = members.map(m => `
+        <tr>
+          <td class="font-monospace text-muted">${m.id}</td>
+          <td class="fw-bold text-white">${m.name}</td>
+          <td><span class="badge bg-secondary">${m.plan}</span></td>
+          <td><span class="badge bg-${m.status === 'active' ? 'success' : 'danger'}">${m.status}</span></td>
+          <td class="font-monospace">${m.expiry}</td>
+          <td>${m.attendance} visits</td>
+        </tr>
+      `).join('');
+
+      // Render classes
+      document.getElementById('classes-body').innerHTML = classes.map(c => `
+        <tr>
+          <td class="fw-bold text-white">${c.title}</td>
+          <td>${c.trainer}</td>
+          <td>${c.day}</td>
+          <td style="color: var(--brand);">${c.time}</td>
+          <td>${c.capacity}</td>
+        </tr>
+      `).join('');
+    }
+
+    function switchTab(tab) {
+      ['overview', 'leads', 'members', 'classes', 'settings'].forEach(t => {
+        const el = document.getElementById('view-' + t);
+        if (el) el.style.display = (t === tab) ? 'block' : 'none';
+      });
+
+      document.querySelectorAll('.nav-pill-btn').forEach(btn => btn.classList.remove('active'));
+      event?.currentTarget?.classList.add('active');
+
+      const titles = {
+        overview: 'Executive Dashboard',
+        leads: 'Leads & Inquiries CRM',
+        members: 'Club Members Directory',
+        classes: 'Class Timetable',
+        settings: 'Club Configuration'
+      };
+      document.getElementById('tab-title').innerText = titles[tab] || 'Dashboard';
+    }
+
+    function updateLeadStatus(id, status) {
+      const leads = getStore('fitwell_leads', defaultLeads);
+      const updated = leads.map(l => l.id === id ? { ...l, status } : l);
+      setStore('fitwell_leads', updated);
+      renderAll();
+    }
+
+    function exportData() {
+      const backup = {
+        leads: getStore('fitwell_leads', defaultLeads),
+        members: getStore('fitwell_members', defaultMembers),
+        classes: getStore('fitwell_classes', defaultClasses)
+      };
+      const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'fitwell_cms_backup.json';
+      a.click();
+    }
+
+    function saveSettings() {
+      alert('Club settings saved successfully!');
+    }
+
+    function showAddModal() {
+      const name = prompt('Prospect Name:');
+      const phone = prompt('Prospect Phone:');
+      if (name && phone) {
+        const leads = getStore('fitwell_leads', defaultLeads);
+        leads.unshift({ id: Date.now(), name, phone, email: '', interest: 'Personal Training', status: 'new' });
+        setStore('fitwell_leads', leads);
+        renderAll();
+      }
+    }
+
+    window.onload = renderAll;
+  </script>
+</body>
+</html>

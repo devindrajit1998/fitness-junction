@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #FFFFFF;
+  --secondary-color: #111111;
+  --text-color: #FFFFFF;
+  --accent-color: #6EFF8F;
+  --accent-secondary-color: #050505;
+  --divider-color: #242424;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #050505;
+}
+::-webkit-scrollbar-track {
+  background-color: #050505;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: #6EFF8F;
+  border-radius: 4px;
+}
+
+::selection {
+  color: #050505;
+  background-color: #6EFF8F;
+}
+
+/* Typography Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Ticker marquee animation */
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 28s linear infinite;
+}
+
+.scrolling-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
