@@ -75,19 +75,19 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
             <Link
               href="/"
               id="header-logo"
-              className="flex items-center gap-3 group relative z-10 py-1"
+              className="flex items-center justify-center lg:w-1/3 group relative z-10 py-1"
             >
               <img
                 src="/images/logo.png"
                 alt="THE FITNESS JUNCTION"
-                className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation (Left) */}
             <nav
               id="desktop-navigation"
-              className="hidden lg:flex items-center gap-7 xl:gap-8 font-['Rajdhani',sans-serif] text-[15px] font-bold uppercase tracking-wider text-white"
+              className="hidden lg:flex items-center gap-7 xl:gap-8 font-['Rajdhani',sans-serif] text-[15px] font-bold uppercase tracking-wider text-white lg:w-1/3 lg:-order-1"
             >
               {/* Home */}
               <Link
@@ -115,28 +115,24 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               >
                 Services
               </Link>
+            </nav>
 
+            {/* Desktop CTA & Contact (Right) */}
+            <div className="hidden lg:flex items-center justify-end gap-6 lg:w-1/3">
               {/* Contact Us Link */}
               <Link
                 href="/contact"
-                className={`transition-colors duration-200 hover:text-[#6EFF8F] ${isActive('/contact') ? 'text-[#6EFF8F]' : 'text-gray-200'
+                className={`transition-colors duration-200 hover:text-[#6EFF8F] font-['Rajdhani',sans-serif] text-[15px] font-bold uppercase tracking-wider ${isActive('/contact') ? 'text-[#6EFF8F]' : 'text-gray-200'
                   }`}
               >
                 Contact Us
               </Link>
-            </nav>
-
-            {/* Desktop CTA Button */}
-            <div className="hidden lg:flex items-center gap-4">
               <button
                 id="navbar-cta-button"
                 onClick={handleCtaClick}
-                className="group relative inline-flex items-center gap-3 bg-[#6EFF8F] hover:bg-[#50D878] text-[#050505] font-extrabold font-['Rajdhani',sans-serif] uppercase tracking-wider text-sm pl-7 pr-3 py-2.5 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-[#6EFF8F]/20"
+                className="group relative inline-flex items-center gap-2 bg-[#6EFF8F] hover:bg-[#50D878] text-[#050505] font-extrabold font-['Rajdhani',sans-serif] uppercase tracking-wider text-sm px-6 py-2.5 rounded-none transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-[#6EFF8F]/20"
               >
-                <span>Get Started</span>
-                <span className="w-7 h-7 rounded-full bg-[#050505] text-[#6EFF8F] inline-flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1">
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+                <span>Book Trial</span>
               </button>
             </div>
 
@@ -144,14 +140,14 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
             <div className="flex lg:hidden items-center gap-3">
               <button
                 onClick={handleCtaClick}
-                className="px-4 py-2 text-xs font-bold font-['Rajdhani',sans-serif] uppercase tracking-wider text-[#050505] bg-[#6EFF8F] rounded-full hover:bg-[#50D878] transition-colors"
+                className="px-4 py-2 text-xs font-bold font-['Rajdhani',sans-serif] uppercase tracking-wider text-[#050505] bg-[#6EFF8F] rounded-none hover:bg-[#50D878] transition-colors"
               >
                 Get Started
               </button>
               <button
                 id="mobile-nav-toggle"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-gray-200 hover:text-[#6EFF8F] hover:bg-gray-800/60 focus:outline-none transition-colors"
+                className="p-2 rounded-sm text-gray-200 hover:text-[#6EFF8F] hover:bg-gray-800/60 focus:outline-none transition-colors"
                 aria-label="Toggle navigation menu"
               >
                 {mobileMenuOpen ? (
@@ -191,7 +187,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-1.5 rounded-lg text-[#A3A3A3] hover:text-[#6EFF8F] hover:bg-gray-800 transition-colors"
+                className="p-1.5 rounded-sm text-[#A3A3A3] hover:text-[#6EFF8F] hover:bg-gray-800 transition-colors"
                 aria-label="Close Navigation"
               >
                 <X className="w-6 h-6" />
@@ -203,7 +199,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-3 px-3 rounded-lg border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
+                className={`py-3 px-3 rounded-sm border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
                   }`}
               >
                 Home
@@ -211,7 +207,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-3 px-3 rounded-lg border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/about') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
+                className={`py-3 px-3 rounded-sm border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/about') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
                   }`}
               >
                 About Us
@@ -219,7 +215,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               <Link
                 href="/services"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-3 px-3 rounded-lg border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/services') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
+                className={`py-3 px-3 rounded-sm border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/services') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
                   }`}
               >
                 Services
@@ -228,7 +224,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`py-3 px-3 rounded-lg border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/contact') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
+                className={`py-3 px-3 rounded-sm border-b border-[#242424]/40 hover:text-[#6EFF8F] hover:bg-[#1C2333] transition-colors ${isActive('/contact') ? 'text-[#6EFF8F] bg-[#1C2333]/50' : 'text-gray-200'
                   }`}
               >
                 Contact Us
@@ -260,7 +256,7 @@ export default function Navbar({ onOpenModal }: NavbarProps) {
                   setMobileMenuOpen(false);
                   handleCtaClick();
                 }}
-                className="w-full py-3 text-center text-sm font-extrabold font-['Rajdhani',sans-serif] uppercase tracking-wider text-[#050505] bg-[#6EFF8F] rounded-full hover:bg-[#50D878] transition-colors shadow-lg shadow-[#6EFF8F]/20"
+                className="w-full py-3 text-center text-sm font-extrabold font-['Rajdhani',sans-serif] uppercase tracking-wider text-[#050505] bg-[#6EFF8F] rounded-none hover:bg-[#50D878] transition-colors shadow-lg shadow-[#6EFF8F]/20"
               >
                 Get Started
               </button>

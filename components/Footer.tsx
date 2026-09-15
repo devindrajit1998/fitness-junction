@@ -34,7 +34,7 @@ export default function Footer() {
     <footer className="bg-[#101520] border-t border-[#242424] text-[#A3A3A3] font-['Rubik',sans-serif] pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Highlight Banner */}
-        <div className="bg-[#050505] border border-[#242424] rounded-2xl p-8 mb-16 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#050505] border border-[#242424] rounded-none p-8 mb-16 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-xl text-center md:text-left">
             <span className="text-[#6EFF8F] font-['Rajdhani',sans-serif] font-bold text-sm tracking-widest uppercase">
               Start Today
@@ -78,7 +78,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
+                className="w-9 h-9 rounded-none bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -87,7 +87,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
+                className="w-9 h-9 rounded-none bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -96,7 +96,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="YouTube"
-                className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
+                className="w-9 h-9 rounded-none bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
               >
                 <Youtube className="w-4 h-4" />
               </a>
@@ -105,7 +105,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Twitter / X"
-                className="w-9 h-9 rounded-full bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
+                className="w-9 h-9 rounded-none bg-[#1C2333] border border-[#242424] flex items-center justify-center text-[#A3A3A3] hover:text-[#6EFF8F] hover:border-[#6EFF8F] transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </a>

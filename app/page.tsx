@@ -360,7 +360,7 @@ export default function FitwellHome() {
           className="fixed inset-0 z-[9999] bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-500"
         >
           <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
-            <div className="absolute inset-0 border-4 border-transparent border-t-[#6EFF8F] rounded-full animate-spin"></div>
+            <div className="absolute inset-0 border-4 border-transparent border-t-[#6EFF8F] rounded-none animate-spin"></div>
             <img src="/images/logo.png" alt="THE FITNESS JUNCTION" className="w-14 h-14 object-contain" />
           </div>
           <p className="font-['Rajdhani'] font-bold tracking-widest text-[#6EFF8F] text-sm uppercase">
@@ -373,6 +373,7 @@ export default function FitwellHome() {
       <Navbar onOpenModal={(ctx) => openModal(ctx || 'Claim Your THE FITNESS JUNCTION Membership')} />
 
       {/* 02. HERO SECTION WITH SLIDER */}
+      {/* 02. HERO SECTION WITH SLIDER - SPLIT SCREEN */}
       <section id="hero-section" className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
         {/* Background Slide Images */}
         {heroSlides.map((slide, index) => (
@@ -400,8 +401,8 @@ export default function FitwellHome() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-6">
               {/* Slide Subtitle Tag */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-[#6EFF8F] text-xs font-bold uppercase tracking-widest">
-                <span className="w-2 h-2 rounded-full bg-[#6EFF8F] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white/10 border border-white/15 text-[#6EFF8F] text-xs font-bold uppercase tracking-widest">
+                <span className="w-2 h-2 rounded-none bg-[#6EFF8F] animate-pulse" />
                 {heroSlides[currentSlide].tagline}
               </div>
 
@@ -422,8 +423,8 @@ export default function FitwellHome() {
               {/* Hero Metric Counters */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-white/15 max-w-lg">
                 <div className="space-y-1">
-                  <h3 className="text-3xl sm:text-4xl font-extrabold text-[#6EFF8F]">4.5 ★</h3>
-                  <p className="text-xs sm:text-sm text-[#A3A3A3] uppercase tracking-wider">Rating (90+ Reviews)</p>
+                  <h3 className="text-3xl sm:text-4xl font-extrabold text-[#6EFF8F]">4.8 ★</h3>
+                  <p className="text-xs sm:text-sm text-[#A3A3A3] uppercase tracking-wider">Rating (278+ Reviews)</p>
                 </div>
                 <div className="space-y-1">
                   <h3 className="text-3xl sm:text-4xl font-extrabold text-[#6EFF8F]">2020</h3>
@@ -440,14 +441,14 @@ export default function FitwellHome() {
                 <button
                   id="hero-get-started-cta"
                   onClick={() => openModal('Claim Your Free Gym Trial')}
-                  className="bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold text-base px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl shadow-[#6EFF8F]/25 flex items-center gap-2"
+                  className="bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold text-base px-8 py-4 rounded-none transition-all duration-300 transform hover:scale-105 shadow-xl shadow-[#6EFF8F]/25 flex items-center gap-2"
                 >
                   <span>Get Started</span>
                   <i className="bi bi-arrow-right"></i>
                 </button>
                 <a
                   href="#about-section"
-                  className="bg-transparent hover:bg-white/10 text-white border border-white/30 font-bold text-base px-8 py-4 rounded-full transition-all duration-300"
+                  className="bg-transparent hover:bg-white/10 text-white border border-white/30 font-bold text-base px-8 py-4 rounded-none transition-all duration-300"
                 >
                   Explore More
                 </a>
@@ -458,13 +459,13 @@ export default function FitwellHome() {
             <div className="lg:col-span-4 flex lg:flex-col justify-end items-center gap-3 pt-6 lg:pt-0">
               <button
                 onClick={() => setCurrentSlide(0)}
-                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${currentSlide === 0 ? 'bg-[#6EFF8F] scale-125' : 'bg-white/30 hover:bg-white/60'
+                className={`w-3.5 h-3.5 rounded-none transition-all duration-300 ${currentSlide === 0 ? 'bg-[#6EFF8F] scale-125' : 'bg-white/30 hover:bg-white/60'
                   }`}
                 aria-label="Slide 1"
               />
               <button
                 onClick={() => setCurrentSlide(1)}
-                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${currentSlide === 1 ? 'bg-[#6EFF8F] scale-125' : 'bg-white/30 hover:bg-white/60'
+                className={`w-3.5 h-3.5 rounded-none transition-all duration-300 ${currentSlide === 1 ? 'bg-[#6EFF8F] scale-125' : 'bg-white/30 hover:bg-white/60'
                   }`}
                 aria-label="Slide 2"
               />
@@ -524,7 +525,7 @@ export default function FitwellHome() {
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 {/* Main Large Image */}
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative cursor-pointer group"
+                  className="rounded-none overflow-hidden border border-white/10 shadow-2xl relative cursor-pointer group"
                   onClick={() => openImageLightbox('/images/real/5.jpg', 'THE FITNESS JUNCTION Floor')}
                 >
                   <img
@@ -541,7 +542,7 @@ export default function FitwellHome() {
 
                 {/* Sub Image 2 - Floating Bottom Left */}
                 <div
-                  className="absolute -bottom-8 -left-6 sm:-left-10 w-44 sm:w-56 rounded-xl overflow-hidden border-2 border-[#6EFF8F]/50 shadow-2xl z-10 cursor-pointer hidden sm:block"
+                  className="absolute -bottom-8 -left-6 sm:-left-10 w-44 sm:w-56 rounded-none overflow-hidden border-2 border-[#6EFF8F]/50 shadow-2xl z-10 cursor-pointer hidden sm:block"
                   onClick={() => openImageLightbox('/images/real/6.jpg', 'THE FITNESS JUNCTION Strength Machines')}
                 >
                   <img
@@ -553,7 +554,7 @@ export default function FitwellHome() {
 
                 {/* Sub Image 3 - Floating Top Right */}
                 <div
-                  className="absolute -top-6 -right-6 sm:-right-8 w-36 sm:w-48 rounded-xl overflow-hidden border-2 border-white/20 shadow-2xl z-10 cursor-pointer hidden sm:block"
+                  className="absolute -top-6 -right-6 sm:-right-8 w-36 sm:w-48 rounded-none overflow-hidden border-2 border-white/20 shadow-2xl z-10 cursor-pointer hidden sm:block"
                   onClick={() => openImageLightbox('/images/real/7.jpg', 'THE FITNESS JUNCTION Free Weights')}
                 >
                   <img
@@ -581,8 +582,8 @@ export default function FitwellHome() {
 
               {/* 4 Feature Items */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                <div className="p-4 rounded-xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
+                <div className="p-4 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
+                  <div className="w-10 h-10 rounded-sm bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
                     <i className="bi bi-person-check"></i>
                   </div>
                   <h3 className="text-lg font-bold text-white uppercase">Personal Trainer</h3>
@@ -591,8 +592,8 @@ export default function FitwellHome() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
+                <div className="p-4 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
+                  <div className="w-10 h-10 rounded-sm bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
                     <i className="bi bi-heart-pulse"></i>
                   </div>
                   <h3 className="text-lg font-bold text-white uppercase">Cardio Programs</h3>
@@ -601,8 +602,8 @@ export default function FitwellHome() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
+                <div className="p-4 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
+                  <div className="w-10 h-10 rounded-sm bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
                     <i className="bi bi-shield-check"></i>
                   </div>
                   <h3 className="text-lg font-bold text-white uppercase">Quality Equipment</h3>
@@ -611,8 +612,8 @@ export default function FitwellHome() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
-                  <div className="w-10 h-10 rounded-lg bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
+                <div className="p-4 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/40 transition-colors">
+                  <div className="w-10 h-10 rounded-sm bg-[#6EFF8F]/10 flex items-center justify-center text-[#6EFF8F] text-xl mb-3">
                     <i className="bi bi-cup-hot"></i>
                   </div>
                   <h3 className="text-lg font-bold text-white uppercase">Healthy Nutritions</h3>
@@ -627,7 +628,7 @@ export default function FitwellHome() {
                 <button
                   id="about-learn-more-btn"
                   onClick={() => openModal('Book a Free Gym Consultation', 'Personal Trainer Consultation')}
-                  className="inline-flex items-center gap-2 bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold text-sm px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold text-sm px-8 py-4 rounded-none transition-all duration-300 transform hover:scale-105"
                 >
                   <span>More About Us</span>
                   <i className="bi bi-arrow-right"></i>
@@ -636,7 +637,66 @@ export default function FitwellHome() {
             </div>
           </div>
         </div>
-      </section>
+      </section>\n\n{/* 10. OUR TESTIMONIALS SECTION */}
+      <section id="testimonials-section" className="py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-[#6EFF8F] text-sm font-bold uppercase tracking-widest">4.8 ⭐ Google Rating | 278+ Reviews</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+              Loved by 278+ Members on <span className="text-[#6EFF8F]">Google</span>
+            </h2>
+          </div>
+
+          {/* Testimonial Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, idx) => (
+              <div 
+                key={idx} 
+                className="bg-[#050505] rounded-none p-8 sm:p-10 border-t-2 border-[#6EFF8F] shadow-2xl relative text-left flex flex-col justify-between transition-transform hover:-translate-y-1 duration-300"
+              >
+                {/* Quote Icon */}
+                <div className="absolute top-6 right-8 text-[#6EFF8F]/10 pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" className="bi bi-quote" viewBox="0 0 16 16">
+                    <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"/>
+                  </svg>
+                </div>
+
+                <div>
+                  {/* Stars */}
+                  <div className="flex items-center gap-1.5 text-[#6EFF8F] text-sm mb-6">
+                    {[...Array(5)].map((_, i) => (
+                      <i key={i} className="bi bi-star-fill"></i>
+                    ))}
+                  </div>
+
+                  {/* Testimonial Quote */}
+                  <p className="text-base sm:text-lg text-gray-300 font-medium leading-relaxed mb-8 relative z-10 italic">
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+                </div>
+
+                {/* Author */}
+                <div className="flex items-center gap-4 border-t border-white/10 pt-6 mt-auto">
+                  <div
+                    className="w-14 h-14 rounded-none overflow-hidden border border-[#6EFF8F] cursor-pointer shrink-0"
+                    onClick={() => openImageLightbox(testimonial.img, testimonial.name)}
+                  >
+                    <img
+                      src={testimonial.img}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white uppercase">{testimonial.name}</h4>
+                    <p className="text-xs text-[#A3A3A3] mt-1">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>\n\n
 
       {/* 05. OUR SERVICES SECTION */}
       <section id="services-section" className="py-24 bg-[#111111] relative">
@@ -667,7 +727,7 @@ export default function FitwellHome() {
               {services.map((svc) => (
                 <div
                   key={svc.id}
-                  className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] snap-center shrink-0 bg-[#050505] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#6EFF8F] transition-all duration-300 flex flex-col justify-between shadow-xl"
+                  className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] snap-center shrink-0 bg-[#050505] rounded-none border border-white/10 overflow-hidden group hover:border-[#6EFF8F] transition-all duration-300 flex flex-col justify-between shadow-xl"
                 >
                   {/* Image */}
                   <div
@@ -679,7 +739,7 @@ export default function FitwellHome() {
                       alt={svc.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute top-4 left-4 bg-[#050505]/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-[#6EFF8F] border border-[#6EFF8F]/30">
+                    <div className="absolute top-4 left-4 bg-[#050505]/80 backdrop-blur-md px-3 py-1 rounded-none text-xs font-semibold text-[#6EFF8F] border border-[#6EFF8F]/30">
                       {svc.category}
                     </div>
                   </div>
@@ -715,7 +775,7 @@ export default function FitwellHome() {
                   const slider = document.getElementById('services-slider');
                   if (slider) slider.scrollBy({ left: -320, behavior: 'smooth' });
                 }}
-                className="w-12 h-12 rounded-full border border-white/20 hover:border-[#6EFF8F] hover:bg-[#6EFF8F] hover:text-black text-white flex items-center justify-center transition-all"
+                className="w-12 h-12 rounded-none border border-white/20 hover:border-[#6EFF8F] hover:bg-[#6EFF8F] hover:text-black text-white flex items-center justify-center transition-all"
                 aria-label="Previous class"
               >
                 <i className="bi bi-chevron-left"></i>
@@ -725,7 +785,7 @@ export default function FitwellHome() {
                   const slider = document.getElementById('services-slider');
                   if (slider) slider.scrollBy({ left: 320, behavior: 'smooth' });
                 }}
-                className="w-12 h-12 rounded-full border border-white/20 hover:border-[#6EFF8F] hover:bg-[#6EFF8F] hover:text-black text-white flex items-center justify-center transition-all"
+                className="w-12 h-12 rounded-none border border-white/20 hover:border-[#6EFF8F] hover:bg-[#6EFF8F] hover:text-black text-white flex items-center justify-center transition-all"
                 aria-label="Next class"
               >
                 <i className="bi bi-chevron-right"></i>
@@ -768,7 +828,7 @@ export default function FitwellHome() {
 
               {/* Steps 01, 02, 03 */}
               <div className="space-y-6">
-                <div className="flex items-start gap-5 p-5 rounded-2xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/50 transition-colors">
+                <div className="flex items-start gap-5 p-5 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/50 transition-colors">
                   <span className="text-3xl font-extrabold text-[#6EFF8F] font-['Rajdhani'] leading-none">01</span>
                   <div>
                     <h3 className="text-lg font-bold text-white uppercase">Personalized Fitness Plans</h3>
@@ -779,7 +839,7 @@ export default function FitwellHome() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5 p-5 rounded-2xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/50 transition-colors">
+                <div className="flex items-start gap-5 p-5 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/50 transition-colors">
                   <span className="text-3xl font-extrabold text-[#6EFF8F] font-['Rajdhani'] leading-none">02</span>
                   <div>
                     <h3 className="text-lg font-bold text-white uppercase">Results-Driven Focus</h3>
@@ -790,7 +850,7 @@ export default function FitwellHome() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-5 p-5 rounded-2xl bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/50 transition-colors">
+                <div className="flex items-start gap-5 p-5 rounded-none bg-[#111111] border border-white/10 hover:border-[#6EFF8F]/50 transition-colors">
                   <span className="text-3xl font-extrabold text-[#6EFF8F] font-['Rajdhani'] leading-none">03</span>
                   <div>
                     <h3 className="text-lg font-bold text-white uppercase">State-of-the-Art Equipment</h3>
@@ -807,7 +867,7 @@ export default function FitwellHome() {
             <div className="lg:col-span-6 relative">
               <div className="grid grid-cols-2 gap-4">
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 cursor-pointer group"
+                  className="rounded-none overflow-hidden border border-white/10 cursor-pointer group"
                   onClick={() => openImageLightbox('/images/real/1.jpg', 'THE FITNESS JUNCTION Training Ground')}
                 >
                   <img
@@ -817,7 +877,7 @@ export default function FitwellHome() {
                   />
                 </div>
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 cursor-pointer group mt-6"
+                  className="rounded-none overflow-hidden border border-white/10 cursor-pointer group mt-6"
                   onClick={() => openImageLightbox('/images/real/2.jpg', 'Free Weight & Strength Area')}
                 >
                   <img
@@ -827,7 +887,7 @@ export default function FitwellHome() {
                   />
                 </div>
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 cursor-pointer group"
+                  className="rounded-none overflow-hidden border border-white/10 cursor-pointer group"
                   onClick={() => openImageLightbox('/images/real/3.jpg', 'Cardio & Conditioning Floor')}
                 >
                   <img
@@ -837,7 +897,7 @@ export default function FitwellHome() {
                   />
                 </div>
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 cursor-pointer group mt-6"
+                  className="rounded-none overflow-hidden border border-white/10 cursor-pointer group mt-6"
                   onClick={() => openImageLightbox('/images/real/4.jpg', 'Training & Functional Area')}
                 >
                   <img
@@ -852,7 +912,7 @@ export default function FitwellHome() {
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
                 <button
                   onClick={() => openModal('Contact Fitwell 24/7 Support')}
-                  className="relative group block rounded-full"
+                  className="relative group block rounded-none"
                   aria-label="Contact Us Circle"
                 >
                   <img
@@ -861,7 +921,7 @@ export default function FitwellHome() {
                     className="w-28 h-28 sm:w-36 sm:h-36 animate-spin-slow transition-transform group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#6EFF8F] flex items-center justify-center text-[#050505] text-xl shadow-lg">
+                    <div className="w-12 h-12 rounded-none bg-[#6EFF8F] flex items-center justify-center text-[#050505] text-xl shadow-lg">
                       <i className="bi bi-arrow-up-right"></i>
                     </div>
                   </div>
@@ -872,7 +932,74 @@ export default function FitwellHome() {
         </div>
       </section>
 
-      {/* 07. OUR PRICING SECTION */}
+      
+
+      {/* 08. OUR TRAINERS SECTION */}
+      <section id="trainers-section" className="py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-[#6EFF8F] text-sm font-bold uppercase tracking-widest">Our Trainers</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+              Your Fitness Journey Starts with <span className="text-[#6EFF8F]">Our Expert</span> Trainers
+            </h2>
+            <p className="text-[#A3A3A3] text-base">
+              Certified professionals dedicated to your technique, mental stamina, and physical transformation.
+            </p>
+          </div>
+
+          {/* Trainers Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {trainers.map((coach, idx) => (
+              <div
+                key={idx}
+                className="bg-[#111111] rounded-none border border-white/10 overflow-hidden group hover:border-[#6EFF8F] transition-all duration-300 shadow-xl flex flex-col justify-between"
+              >
+                {/* Photo */}
+                <div
+                  className="relative h-72 overflow-hidden cursor-pointer"
+                  onClick={() => openImageLightbox(coach.img, `${coach.name} - ${coach.role}`)}
+                >
+                  <img
+                    src={coach.img}
+                    alt={coach.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-4 right-4 bg-[#050505]/80 backdrop-blur-md px-3 py-1 rounded-none text-xs font-semibold text-[#6EFF8F] border border-white/10">
+                    {coach.specialty}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 text-center -mt-6 relative z-10">
+                  <p className="text-xs uppercase tracking-widest text-[#6EFF8F] font-semibold">{coach.role}</p>
+                  <h3 className="text-xl font-bold text-white uppercase mt-1">{coach.name}</h3>
+
+                  {/* Social links */}
+                  <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-white/10 text-[#A3A3A3]">
+                    <a href="#" className="hover:text-[#6EFF8F] transition-colors" aria-label="Facebook">
+                      <i className="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" className="hover:text-[#6EFF8F] transition-colors" aria-label="Instagram">
+                      <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" className="hover:text-[#6EFF8F] transition-colors" aria-label="Dribbble">
+                      <i className="fa-brands fa-dribbble"></i>
+                    </a>
+                  </div>
+
+                  <button
+                    onClick={() => openModal(`Book Coach: ${coach.name}`, `Personal Session with ${coach.name}`)}
+                    className="mt-4 w-full py-2.5 bg-white/10 hover:bg-[#6EFF8F] hover:text-[#050505] text-white text-xs font-bold rounded-none uppercase tracking-wider transition-colors"
+                  >
+                    Book Session
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>\n\n{/* 07. OUR PRICING SECTION */}
       <section id="pricing-section" className="py-24 bg-[#111111] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -890,13 +1017,13 @@ export default function FitwellHome() {
             {pricingPlans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 relative ${plan.highlighted
+                className={`rounded-none p-8 flex flex-col justify-between transition-all duration-300 relative ${plan.highlighted
                     ? 'bg-[#050505] border-2 border-[#6EFF8F] shadow-2xl shadow-[#6EFF8F]/10 transform md:-translate-y-3'
                     : 'bg-[#050505] border border-white/10 hover:border-white/20 shadow-xl'
                   }`}
               >
                 {plan.badge && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#6EFF8F] text-[#050505] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#6EFF8F] text-[#050505] font-bold text-xs px-4 py-1.5 rounded-none uppercase tracking-widest shadow-md">
                     {plan.badge}
                   </div>
                 )}
@@ -922,7 +1049,7 @@ export default function FitwellHome() {
 
                 <button
                   onClick={() => openModal(`Get Membership: ${plan.name}`, `${plan.name} (${plan.price}${plan.unit})`)}
-                  className={`w-full py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 ${plan.highlighted
+                  className={`w-full py-4 rounded-none font-bold text-sm uppercase tracking-wider transition-all duration-300 ${plan.highlighted
                       ? 'bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] shadow-lg shadow-[#6EFF8F]/20'
                       : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
@@ -949,74 +1076,7 @@ export default function FitwellHome() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 08. OUR TRAINERS SECTION */}
-      <section id="trainers-section" className="py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-            <span className="text-[#6EFF8F] text-sm font-bold uppercase tracking-widest">Our Trainers</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
-              Your Fitness Journey Starts with <span className="text-[#6EFF8F]">Our Expert</span> Trainers
-            </h2>
-            <p className="text-[#A3A3A3] text-base">
-              Certified professionals dedicated to your technique, mental stamina, and physical transformation.
-            </p>
-          </div>
-
-          {/* Trainers Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {trainers.map((coach, idx) => (
-              <div
-                key={idx}
-                className="bg-[#111111] rounded-2xl border border-white/10 overflow-hidden group hover:border-[#6EFF8F] transition-all duration-300 shadow-xl flex flex-col justify-between"
-              >
-                {/* Photo */}
-                <div
-                  className="relative h-72 overflow-hidden cursor-pointer"
-                  onClick={() => openImageLightbox(coach.img, `${coach.name} - ${coach.role}`)}
-                >
-                  <img
-                    src={coach.img}
-                    alt={coach.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80" />
-                  <div className="absolute top-4 right-4 bg-[#050505]/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-[#6EFF8F] border border-white/10">
-                    {coach.specialty}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 text-center -mt-6 relative z-10">
-                  <p className="text-xs uppercase tracking-widest text-[#6EFF8F] font-semibold">{coach.role}</p>
-                  <h3 className="text-xl font-bold text-white uppercase mt-1">{coach.name}</h3>
-
-                  {/* Social links */}
-                  <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-white/10 text-[#A3A3A3]">
-                    <a href="#" className="hover:text-[#6EFF8F] transition-colors" aria-label="Facebook">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#" className="hover:text-[#6EFF8F] transition-colors" aria-label="Instagram">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#" className="hover:text-[#6EFF8F] transition-colors" aria-label="Dribbble">
-                      <i className="fa-brands fa-dribbble"></i>
-                    </a>
-                  </div>
-
-                  <button
-                    onClick={() => openModal(`Book Coach: ${coach.name}`, `Personal Session with ${coach.name}`)}
-                    className="mt-4 w-full py-2.5 bg-white/10 hover:bg-[#6EFF8F] hover:text-[#050505] text-white text-xs font-bold rounded-full uppercase tracking-wider transition-colors"
-                  >
-                    Book Session
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </section>\n\n
 
       {/* 09. OUR FAQS SECTION */}
       <section id="faqs-section" className="py-24 bg-[#111111] relative">
@@ -1026,7 +1086,7 @@ export default function FitwellHome() {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-sm lg:max-w-none">
                 <div
-                  className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl cursor-pointer"
+                  className="rounded-none overflow-hidden border border-white/10 shadow-2xl cursor-pointer"
                   onClick={() => openImageLightbox('/images/faq-img-1.jpg', 'Fitwell Training Atmosphere')}
                 >
                   <img
@@ -1036,7 +1096,7 @@ export default function FitwellHome() {
                   />
                 </div>
                 <div
-                  className="absolute -bottom-8 -right-6 w-48 rounded-xl overflow-hidden border-2 border-[#6EFF8F] shadow-2xl cursor-pointer hidden sm:block"
+                  className="absolute -bottom-8 -right-6 w-48 rounded-none overflow-hidden border-2 border-[#6EFF8F] shadow-2xl cursor-pointer hidden sm:block"
                   onClick={() => openImageLightbox('/images/faq-img-2.jpg', 'Fitwell Member Motivation')}
                 >
                   <img
@@ -1064,7 +1124,7 @@ export default function FitwellHome() {
                 {faqs.map((faq, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-white/10 bg-[#050505] overflow-hidden transition-colors"
+                    className="rounded-none border border-white/10 bg-[#050505] overflow-hidden transition-colors"
                   >
                     <button
                       onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
@@ -1088,69 +1148,7 @@ export default function FitwellHome() {
         </div>
       </section>
 
-      {/* 10. OUR TESTIMONIALS SECTION */}
-      <section id="testimonials-section" className="py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-            <span className="text-[#6EFF8F] text-sm font-bold uppercase tracking-widest">4.8 ⭐ Google Rating | 278+ Reviews</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
-              Loved by 278+ Members on <span className="text-[#6EFF8F]">Google</span>
-            </h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto bg-[#111111] rounded-3xl p-8 sm:p-12 border border-white/10 shadow-2xl relative text-center">
-            {/* Stars */}
-            <div className="flex items-center justify-center gap-1.5 text-[#6EFF8F] text-lg mb-6">
-              {[...Array(5)].map((_, i) => (
-                <i key={i} className="bi bi-star-fill"></i>
-              ))}
-            </div>
-
-            {/* Testimonial Quote */}
-            <p className="text-lg sm:text-2xl text-gray-200 font-light italic leading-relaxed max-w-2xl mx-auto">
-              &ldquo;{testimonials[currentTestimonial].text}&rdquo;
-            </p>
-
-            {/* Author */}
-            <div className="mt-8 flex flex-col items-center gap-3">
-              <div
-                className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#6EFF8F] shadow-md cursor-pointer"
-                onClick={() =>
-                  openImageLightbox(testimonials[currentTestimonial].img, testimonials[currentTestimonial].name)
-                }
-              >
-                <img
-                  src={testimonials[currentTestimonial].img}
-                  alt={testimonials[currentTestimonial].name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-white uppercase">{testimonials[currentTestimonial].name}</h4>
-                <p className="text-xs text-[#A3A3A3]">{testimonials[currentTestimonial].role}</p>
-              </div>
-            </div>
-
-            {/* Carousel Arrows */}
-            <div className="flex items-center justify-center gap-4 mt-8">
-              <button
-                onClick={() => setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#6EFF8F] hover:text-[#050505] text-white flex items-center justify-center transition-colors"
-                aria-label="Previous Testimonial"
-              >
-                <i className="bi bi-chevron-left"></i>
-              </button>
-              <button
-                onClick={() => setCurrentTestimonial((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#6EFF8F] hover:text-[#050505] text-white flex items-center justify-center transition-colors"
-                aria-label="Next Testimonial"
-              >
-                <i className="bi bi-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* 11. OUR BLOG SECTION */}
       <section id="blog-section" className="py-24 bg-[#111111] relative">
@@ -1167,7 +1165,7 @@ export default function FitwellHome() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Featured Left Post (post-1.jpg) */}
-            <div className="lg:col-span-6 bg-[#050505] rounded-2xl border border-white/10 overflow-hidden group shadow-xl">
+            <div className="lg:col-span-6 bg-[#050505] rounded-none border border-white/10 overflow-hidden group shadow-xl">
               <div
                 className="relative h-72 sm:h-96 overflow-hidden cursor-pointer"
                 onClick={() => openImageLightbox(blogPosts[0].img, blogPosts[0].title)}
@@ -1177,7 +1175,7 @@ export default function FitwellHome() {
                   alt={blogPosts[0].title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-4 left-4 bg-[#6EFF8F] text-[#050505] font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-[#6EFF8F] text-[#050505] font-bold text-xs px-3 py-1 rounded-none uppercase tracking-wider">
                   Featured Insight
                 </div>
               </div>
@@ -1202,10 +1200,10 @@ export default function FitwellHome() {
               {blogPosts.slice(1).map((post) => (
                 <div
                   key={post.id}
-                  className="bg-[#050505] rounded-2xl border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row gap-5 items-center group hover:border-[#6EFF8F]/50 transition-colors shadow-lg"
+                  className="bg-[#050505] rounded-none border border-white/10 p-4 sm:p-5 flex flex-col sm:flex-row gap-5 items-center group hover:border-[#6EFF8F]/50 transition-colors shadow-lg"
                 >
                   <div
-                    className="w-full sm:w-44 h-36 shrink-0 rounded-xl overflow-hidden cursor-pointer"
+                    className="w-full sm:w-44 h-36 shrink-0 rounded-none overflow-hidden cursor-pointer"
                     onClick={() => openImageLightbox(post.img, post.title)}
                   >
                     <img
@@ -1239,7 +1237,7 @@ export default function FitwellHome() {
       <section id="cta-section" className="py-20 relative overflow-hidden bg-[#050505]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className="rounded-3xl border border-white/10 p-8 sm:p-14 relative overflow-hidden shadow-2xl"
+            className="rounded-none border border-white/10 p-8 sm:p-14 relative overflow-hidden shadow-2xl"
             style={{
               backgroundImage: 'linear-gradient(90deg, rgba(23, 30, 46, 0.95) 0%, rgba(23, 30, 46, 0.85) 60%, rgba(23, 30, 46, 0.6) 100%), url(/images/cta-box-bg.jpg)',
               backgroundSize: 'cover',
@@ -1258,7 +1256,7 @@ export default function FitwellHome() {
 
               {/* Offer and CTA */}
               <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
-                <span className="inline-block bg-[#6EFF8F] text-[#050505] font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest">
+                <span className="inline-block bg-[#6EFF8F] text-[#050505] font-bold text-xs px-4 py-1.5 rounded-none uppercase tracking-widest">
                   Limited Time Promotion
                 </span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-tight">
@@ -1282,7 +1280,7 @@ export default function FitwellHome() {
                   <button
                     id="cta-box-get-membership"
                     onClick={() => openModal('Claim 30% Off Promotion', '30% Off Promotional Membership')}
-                    className="bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold text-sm px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl shadow-[#6EFF8F]/25 uppercase tracking-wider"
+                    className="bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold text-sm px-8 py-4 rounded-none transition-all duration-300 transform hover:scale-105 shadow-xl shadow-[#6EFF8F]/25 uppercase tracking-wider"
                   >
                     Get Membership
                   </button>
@@ -1355,11 +1353,11 @@ export default function FitwellHome() {
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 pr-12 rounded-full bg-[#111111] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
+                    className="w-full px-4 py-3 pr-12 rounded-none bg-[#111111] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
                   />
                   <button
                     type="submit"
-                    className="absolute right-1.5 top-1/2 transform -translate-y-1/2 w-9 h-9 rounded-full bg-[#6EFF8F] flex items-center justify-center text-[#050505] hover:bg-[#c4e600] transition-colors"
+                    className="absolute right-1.5 top-1/2 transform -translate-y-1/2 w-9 h-9 rounded-none bg-[#6EFF8F] flex items-center justify-center text-[#050505] hover:bg-[#c4e600] transition-colors"
                     aria-label="Subscribe to newsletter"
                   >
                     <img src="/images/arrow-black.svg" alt="Submit" className="w-4 h-4" />
@@ -1376,7 +1374,7 @@ export default function FitwellHome() {
               <h3 className="text-lg font-bold uppercase text-white tracking-wider">Contact Us</h3>
               <div className="space-y-4 text-sm text-[#A3A3A3]">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#111111] flex items-center justify-center text-[#6EFF8F] shrink-0 border border-white/10">
+                  <div className="w-8 h-8 rounded-none bg-[#111111] flex items-center justify-center text-[#6EFF8F] shrink-0 border border-white/10">
                     <img src="/images/icon-phone.svg" alt="Phone" className="w-4 h-4" />
                   </div>
                   <a href="tel:+919681125006" className="hover:text-[#6EFF8F] transition-colors">
@@ -1436,7 +1434,7 @@ export default function FitwellHome() {
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="bg-[#111111] border border-white/15 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl text-white"
+            className="bg-[#111111] border border-white/15 rounded-none max-w-lg w-full p-6 sm:p-8 relative shadow-2xl text-white"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -1463,7 +1461,7 @@ export default function FitwellHome() {
                   placeholder="e.g. Alex Johnson"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
+                  className="w-full px-4 py-2.5 rounded-none bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
                 />
               </div>
 
@@ -1476,7 +1474,7 @@ export default function FitwellHome() {
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
+                    className="w-full px-4 py-2.5 rounded-none bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
                   />
                 </div>
                 <div>
@@ -1486,7 +1484,7 @@ export default function FitwellHome() {
                     placeholder="alex@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
+                    className="w-full px-4 py-2.5 rounded-none bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
                   />
                 </div>
               </div>
@@ -1496,7 +1494,7 @@ export default function FitwellHome() {
                 <select
                   value={formData.interest}
                   onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
+                  className="w-full px-4 py-2.5 rounded-none bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
                 >
                   <option value="Monthly Pass (₹1500/mo)">Monthly Pass (₹1500/mo)</option>
                   <option value="Weekly Pass (₹500/wk)">Weekly Pass (₹500/wk)</option>
@@ -1515,19 +1513,19 @@ export default function FitwellHome() {
                   placeholder="e.g. Weight loss, hypertrophy, schedule preference..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
+                  className="w-full px-4 py-2.5 rounded-none bg-[#050505] border border-white/15 text-white text-sm focus:outline-none focus:border-[#6EFF8F]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold rounded-full uppercase tracking-wider text-sm transition-transform duration-200 active:scale-95 shadow-lg shadow-[#6EFF8F]/20"
+                className="w-full py-3.5 bg-[#6EFF8F] hover:bg-[#c4e600] text-[#050505] font-bold rounded-none uppercase tracking-wider text-sm transition-transform duration-200 active:scale-95 shadow-lg shadow-[#6EFF8F]/20"
               >
                 Confirm & Submit Request
               </button>
 
               {formSubmitted && (
-                <div className="p-3 rounded-xl bg-[#6EFF8F]/15 border border-[#6EFF8F] text-[#6EFF8F] text-center text-xs font-semibold animate-fade-in">
+                <div className="p-3 rounded-none bg-[#6EFF8F]/15 border border-[#6EFF8F] text-[#6EFF8F] text-center text-xs font-semibold animate-fade-in">
                   🎉 Thank you! Your request has been registered. Our head trainer will contact you shortly.
                 </div>
               )}
@@ -1544,7 +1542,7 @@ export default function FitwellHome() {
         <button
           id="scroll-to-top"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-24 right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-[#6EFF8F] hover:text-[#050505] text-white flex items-center justify-center text-lg border border-white/20 shadow-xl transition-all duration-300 z-40"
+          className="fixed bottom-24 right-6 w-11 h-11 rounded-none bg-white/10 hover:bg-[#6EFF8F] hover:text-[#050505] text-white flex items-center justify-center text-lg border border-white/20 shadow-xl transition-all duration-300 z-40"
           aria-label="Scroll to top"
         >
           <i className="bi bi-arrow-up"></i>
@@ -1569,7 +1567,7 @@ export default function FitwellHome() {
             <img
               src={lightboxSrc}
               alt={lightboxCaption}
-              className="max-h-[80vh] w-auto rounded-2xl border border-white/20 shadow-2xl object-contain"
+              className="max-h-[80vh] w-auto rounded-none border border-white/20 shadow-2xl object-contain"
             />
             {lightboxCaption && (
               <p className="mt-3 text-sm text-[#A3A3A3] font-medium tracking-wide">{lightboxCaption}</p>
