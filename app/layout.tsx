@@ -2,19 +2,21 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
-  title: 'SPARK GYM - Unisex Gym & Fitness Centre in Chakdaha, Nadia',
-  description: 'SPARK GYM in Chakdaha (beside Monorama Ultrascan, C.B. Road, Lalpur) offers gym, CrossFit, cardio, personal training, and fitness consultation since 2020. Rated 4.5/5.',
+  metadataBase: new URL('https://thefitnessjunction.online'),
+  title: 'THE FITNESS JUNCTION | Premium Gym & Fitness Centre in Barasat',
+  description: 'Join THE FITNESS JUNCTION in Barasat for Gym, CrossFit, Yoga, and Personal Training. Top-rated fitness centre (4.8⭐) located at Arabindrapally, Helabattala.',
   openGraph: {
-    title: 'SPARK GYM - Top Fitness & Gym in Chakdaha',
-    description: 'Premier unisex fitness centre in Chakdaha, Nadia. Gym, CrossFit, personal training, diet counselling. Rated 4.5/5 on Google & Justdial.',
+    title: 'THE FITNESS JUNCTION - Gym & CrossFit in Barasat',
+    description: 'Train Hard. Move Better. Become Stronger. Premium unisex fitness centre offering expert personal training and top-tier equipment in Barasat, West Bengal.',
     type: 'website',
+    url: 'https://thefitnessjunction.online',
+    siteName: 'THE FITNESS JUNCTION',
     images: ['/images/hero-bg.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SPARK GYM - Unisex Gym & Fitness Centre Chakdaha',
-    description: 'Empower Your Strength at SPARK GYM Chakdaha. Gym, CrossFit, personal training & cardio.',
+    title: 'THE FITNESS JUNCTION | Premium Gym in Barasat',
+    description: 'Build muscle, lose fat, and improve strength at THE FITNESS JUNCTION. Rated 4.8/5 on Google & Justdial.',
     images: ['/images/hero-bg.jpg'],
   },
   icons: {
@@ -46,13 +48,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'HealthClub',
-              name: 'SPARK GYM',
+              name: 'THE FITNESS JUNCTION',
               image: '/images/hero-bg.jpg',
               telephone: '+91 82408 55067',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'Monorama Ultrascan Pvt. Ltd., C.B. Road, beside Monorama Ultrascan, Lalpur',
-                addressLocality: 'Chakdaha',
+                addressLocality: 'Barasat',
                 addressRegion: 'West Bengal',
                 postalCode: '741222',
                 addressCountry: 'IN',

@@ -13,7 +13,7 @@ interface LeadModalProps {
 export default function LeadModal({
   isOpen,
   onClose,
-  title = 'Claim Your SPARK GYM Membership',
+  title = 'Claim Your THE FITNESS JUNCTION Membership',
   defaultInterest = 'Gym & Strength Training',
 }: LeadModalProps) {
   const [formData, setFormData] = useState({

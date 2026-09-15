@@ -119,10 +119,10 @@ export default function ContactPage() {
               <h3 className="font-['Rajdhani',sans-serif] font-bold text-2xl text-white uppercase mb-2">
                 Our Location
               </h3>
-              <p className="text-sm text-[#A3A3A3] mb-4">Chakdaha, Nadia, West Bengal</p>
+              <p className="text-sm text-[#A3A3A3] mb-4">Barasat, Kolkata, West Bengal</p>
               <address className="not-italic text-[#6EFF8F] font-['Rajdhani',sans-serif] font-semibold text-base leading-snug">
                 Monorama Ultrascan Pvt. Ltd., C.B. Road<br />
-                <span className="text-[#A3A3A3] text-sm font-normal">Beside Monorama Ultrascan, Lalpur, Chakdaha 741222</span>
+                <span className="text-[#A3A3A3] text-sm font-normal">Beside Monorama Ultrascan, Lalpur, Barasat 741222</span>
               </address>
             </div>
           </div>
@@ -277,8 +277,8 @@ export default function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <div className="h-[460px] sm:h-[500px] rounded-3xl overflow-hidden border border-[#242424] shadow-2xl relative">
                 <iframe
-                  title="SPARK GYM Chakdaha Location"
-                  src="https://maps.google.com/maps?q=Monorama+Ultrascan+Pvt+Ltd+Chakdaha+West+Bengal+741222&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  title="THE FITNESS JUNCTION Barasat Location"
+                  src="https://maps.google.com/maps?q=Monorama+Ultrascan+Pvt+Ltd+Barasat+West+Bengal+741222&t=&z=16&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
@@ -315,7 +315,7 @@ export default function ContactPage() {
       <Footer />
 
       {/* Modals & Helpers */}
-      <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title="Contact SPARK GYM Team" />
+      <LeadModal isOpen={modalOpen} onClose={() => setModalOpen(false)} title="Contact THE FITNESS JUNCTION Team" />
       <ChatWidget onOpenModal={() => setModalOpen(true)} />
       <ScrollToTop />
     </div>

@@ -637,7 +637,9 @@ export default function FitwellHome() {
             </div>
           </div>
         </div>
-      </section>\n\n{/* 10. OUR TESTIMONIALS SECTION */}
+      </section>
+
+      {/* 10. OUR TESTIMONIALS SECTION */}
       <section id="testimonials-section" className="py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -1331,7 +1333,7 @@ export default function FitwellHome() {
                 <img src="/images/logo.png" alt="THE FITNESS JUNCTION" className="h-11 w-auto object-contain" />
               </div>
               <p className="text-[#A3A3A3] text-sm leading-relaxed max-w-sm">
-                Unisex Gym & Fitness Centre in Barasat, Nadia operating since 2020. Gym, CrossFit, personal training, and diet counselling.
+                Unisex Gym & Fitness Centre in Barasat, Kolkata operating since 2020. Gym, CrossFit, personal training, and diet counselling.
               </p>
 
               {/* Newsletter Form */}

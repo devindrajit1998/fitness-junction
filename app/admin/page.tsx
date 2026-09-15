@@ -383,7 +383,7 @@ export default function AdminDashboardPage() {
           {/* Logo & Header */}
           <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group">
-              <img src="/images/logo.png" alt="SPARK GYM" className="h-8 w-auto object-contain" />
+              <img src="/images/logo.png" alt="THE FITNESS JUNCTION" className="h-8 w-auto object-contain" />
             </Link>
             <div className="flex items-center gap-1.5">
               <span className="px-2 py-0.5 bg-[#6EFF8F]/20 text-[#6EFF8F] text-[10px] font-bold uppercase tracking-wider rounded border border-[#6EFF8F]/40">

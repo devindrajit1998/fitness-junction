@@ -52,7 +52,7 @@ export default function CtaBox({ onOpenModal }: CtaBoxProps) {
 
               <div className="pt-2">
                 <button
-                  onClick={() => onOpenModal ? onOpenModal('Claim 30% Off SPARK GYM Pass') : undefined}
+                  onClick={() => onOpenModal ? onOpenModal('Claim 30% Off THE FITNESS JUNCTION Pass') : undefined}
                   className="px-8 py-4 rounded bg-[#6EFF8F] text-[#050505] hover:bg-[#50D878] font-['Rajdhani',sans-serif] font-bold text-base uppercase tracking-wider inline-flex items-center gap-2 transition-all duration-300 shadow-xl shadow-[#6EFF8F]/30"
                 >
                   <span>Claim 30% Discount</span>

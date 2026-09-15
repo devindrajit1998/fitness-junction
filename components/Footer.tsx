@@ -69,7 +69,7 @@ export default function Footer() {
               <Image src="/images/logo.png" alt="THE FITNESS JUNCTION" width={42} height={42} className="object-contain" />
             </Link>
             <p className="text-sm text-[#A3A3A3] leading-relaxed">
-              Premier unisex fitness centre in Barasat, Nadia established in 2020. Providing regular gym, CrossFit, cardio, personal training, and diet consultation.
+              Premier unisex fitness centre in Barasat, Kolkata established in 2020. Providing regular gym, CrossFit, cardio, personal training, and diet consultation.
             </p>
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">

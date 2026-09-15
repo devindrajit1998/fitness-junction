@@ -67,7 +67,7 @@ export default function LoginPage() {
         <Link href="/" className="flex items-center gap-2.5 group">
           <img
             src="/images/logo.png"
-            alt="SPARK GYM"
+            alt="THE FITNESS JUNCTION"
             className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </Link>

@@ -25,7 +25,7 @@ const testimonials: Testimonial[] = [
     role: 'Corporate Executive',
     image: '/images/author-2.jpg',
     rating: 5,
-    text: 'Between 60-hour work weeks and travel, staying fit felt impossible. SPARK GYM custom-designed a high-output routine that restored my stamina and reduced my daily stress levels completely.',
+    text: 'Between 60-hour work weeks and travel, staying fit felt impossible. THE FITNESS JUNCTION custom-designed a high-output routine that restored my stamina and reduced my daily stress levels completely.',
   },
   {
     name: 'Elena Rostova',

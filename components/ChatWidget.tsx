@@ -12,15 +12,15 @@ export default function ChatWidget({ onOpenModal }: ChatWidgetProps) {
   const [messages, setMessages] = useState<Array<{ sender: 'bot' | 'user'; text: string }>>([
     {
       sender: 'bot',
-      text: 'Welcome to SPARK GYM Chakdaha! 👋 How can we help you with your fitness journey today?',
+      text: 'Welcome to THE FITNESS JUNCTION Barasat! 👋 How can we help you with your fitness journey today?',
     },
   ]);
   const [customInput, setCustomInput] = useState('');
 
   const quickReplies = [
-    { label: 'Gym Services', answer: 'We offer regular gym/strength training, CrossFit, personal training, cardio fitness, and diet counselling in Chakdaha!' },
-    { label: 'Timings & Days', answer: 'SPARK GYM is open all 7 days from 06:00 AM to 10:00 PM.' },
-    { label: 'Gym Location', answer: 'Beside Monorama Ultrascan Pvt. Ltd., C.B. Road, Lalpur, Chakdaha, West Bengal 741222. Call +91 82408 55067.' },
+    { label: 'Gym Services', answer: 'We offer regular gym/strength training, CrossFit, personal training, cardio fitness, and diet counselling in Barasat!' },
+    { label: 'Timings & Days', answer: 'THE FITNESS JUNCTION is open all 7 days from 06:00 AM to 10:00 PM.' },
+    { label: 'Gym Location', answer: 'Beside Monorama Ultrascan Pvt. Ltd., C.B. Road, Lalpur, Barasat, West Bengal 741222. Call +91 82408 55067.' },
     { label: 'Book a Consultation', answer: 'Great! Click below to request a free fitness consultation or join.', isAction: true },
   ];
 
@@ -32,7 +32,7 @@ export default function ChatWidget({ onOpenModal }: ChatWidgetProps) {
     ]);
     if (item.isAction && onOpenModal) {
       setTimeout(() => {
-        onOpenModal('SPARK GYM Consultation Pass');
+        onOpenModal('THE FITNESS JUNCTION Consultation Pass');
       }, 600);
     }
   };
@@ -57,7 +57,7 @@ export default function ChatWidget({ onOpenModal }: ChatWidgetProps) {
       {/* Floating Bubble Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="SPARK GYM Chat Assistant"
+        aria-label="THE FITNESS JUNCTION Chat Assistant"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#6EFF8F] text-[#050505] shadow-2xl flex items-center justify-center hover:scale-105 transition-all duration-300 border-2 border-[#050505]"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
@@ -72,9 +72,9 @@ export default function ChatWidget({ onOpenModal }: ChatWidgetProps) {
               <div className="w-3 h-3 rounded-full bg-[#6EFF8F] animate-pulse" />
               <div>
                 <h4 className="font-['Rajdhani',sans-serif] font-bold text-base text-white uppercase">
-                  SPARK GYM Desk
+                  THE FITNESS JUNCTION Desk
                 </h4>
-                <p className="text-[11px] text-[#A3A3A3]">Chakdaha | 06:00 AM - 10:00 PM</p>
+                <p className="text-[11px] text-[#A3A3A3]">Barasat | 06:00 AM - 10:00 PM</p>
               </div>
             </div>
             <button

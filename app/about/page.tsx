@@ -30,13 +30,13 @@ import {
 
 export default function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState('Claim Your SPARK GYM Membership');
+  const [modalTitle, setModalTitle] = useState('Claim Your THE FITNESS JUNCTION Membership');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState('');
   const [lightboxCaption, setLightboxCaption] = useState('');
 
   const openModal = (title?: string) => {
-    setModalTitle(title || 'Claim Your SPARK GYM Membership');
+    setModalTitle(title || 'Claim Your THE FITNESS JUNCTION Membership');
     setModalOpen(true);
   };
 
@@ -97,11 +97,11 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div
                   className="relative h-64 sm:h-80 rounded-2xl overflow-hidden border border-[#242424] shadow-xl cursor-pointer group"
-                  onClick={() => openLightbox('/images/real/5.jpg', 'SPARK GYM Training Ground & Facilities')}
+                  onClick={() => openLightbox('/images/real/5.jpg', 'THE FITNESS JUNCTION Training Ground & Facilities')}
                 >
                   <Image
                     src="/images/real/5.jpg"
-                    alt="SPARK GYM Facility"
+                    alt="THE FITNESS JUNCTION Facility"
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -114,7 +114,7 @@ export default function AboutPage() {
                   >
                     <Image
                       src="/images/real/6.jpg"
-                      alt="SPARK GYM Equipment"
+                      alt="THE FITNESS JUNCTION Equipment"
                       fill
                       sizes="(max-width: 768px) 50vw, 25vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -244,11 +244,11 @@ export default function AboutPage() {
             <div className="flex justify-center">
               <div
                 className="relative w-full max-w-sm h-80 rounded-2xl overflow-hidden border border-[#242424] shadow-2xl group cursor-pointer"
-                onClick={() => openLightbox('/images/real/8.jpg', 'SPARK GYM Training Approach')}
+                onClick={() => openLightbox('/images/real/8.jpg', 'THE FITNESS JUNCTION Training Approach')}
               >
                 <Image
                   src="/images/real/8.jpg"
-                  alt="SPARK GYM Approach"
+                  alt="THE FITNESS JUNCTION Approach"
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

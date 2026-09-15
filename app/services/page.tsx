@@ -64,13 +64,13 @@ const allServices = [
 
 export default function ServicesPage() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState('Claim Your SPARK GYM Membership');
+  const [modalTitle, setModalTitle] = useState('Claim Your THE FITNESS JUNCTION Membership');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState('');
   const [lightboxCaption, setLightboxCaption] = useState('');
 
   const openModal = (title?: string) => {
-    setModalTitle(title || 'Claim Your SPARK GYM Membership');
+    setModalTitle(title || 'Claim Your THE FITNESS JUNCTION Membership');
     setModalOpen(true);
   };
 

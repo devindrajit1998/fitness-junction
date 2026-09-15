@@ -10,7 +10,7 @@ interface WhyChooseSectionProps {
 
 export default function WhyChooseSection({ onImageClick }: WhyChooseSectionProps) {
   const collageImages = [
-    { src: '/images/real/1.jpg', caption: 'SPARK GYM training ground & equipment' },
+    { src: '/images/real/1.jpg', caption: 'THE FITNESS JUNCTION training ground & equipment' },
     { src: '/images/real/2.jpg', caption: 'State-of-the-art strength & workout stations' },
     { src: '/images/real/3.jpg', caption: 'Dedicated free-weight and dumbbell area' },
     { src: '/images/real/4.jpg', caption: 'Functional fitness and conditioning floor' },
@@ -50,7 +50,7 @@ export default function WhyChooseSection({ onImageClick }: WhyChooseSectionProps
               <Link
                 href="/contact"
                 className="block relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#6EFF8F] p-2 shadow-2xl border-4 border-[#050505] hover:scale-105 transition-transform"
-                title="Contact SPARK GYM"
+                title="Contact THE FITNESS JUNCTION"
               >
                 <div className="relative w-full h-full animate-spin-slow">
                   <Image
