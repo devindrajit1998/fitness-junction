@@ -698,7 +698,9 @@ export default function FitwellHome() {
             ))}
           </div>
         </div>
-      </section>\n\n
+      </section>
+
+
 
       {/* 05. OUR SERVICES SECTION */}
       <section id="services-section" className="py-24 bg-[#111111] relative">
@@ -1001,7 +1003,9 @@ export default function FitwellHome() {
             ))}
           </div>
         </div>
-      </section>\n\n{/* 07. OUR PRICING SECTION */}
+      </section>
+
+{/* 07. OUR PRICING SECTION */}
       <section id="pricing-section" className="py-24 bg-[#111111] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
@@ -1078,7 +1082,9 @@ export default function FitwellHome() {
             </div>
           </div>
         </div>
-      </section>\n\n
+      </section>
+
+
 
       {/* 09. OUR FAQS SECTION */}
       <section id="faqs-section" className="py-24 bg-[#111111] relative">
